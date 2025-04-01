@@ -1,0 +1,15 @@
+.button__menu {
+    display: flex;
+}
+.button {
+    border: none;
+}
+.button__favorite {
+    background-image: url('../../assets/img/heart.png');
+    background-color: #fff;
+  }
+  .button__art {
+    background-image: url('../../assets/img/crt.png');
+    background-color: #fff;
+  }
+
