@@ -115,11 +115,12 @@
 .product__table-item {
     padding: 8px 0;
     color: #969EAE;
-    .product__table-item:last-child {
-        color: #1c1c1c;
-        text-align: right;
-    }
 }
+.product__table-item:last-child {
+    color: #1c1c1c;
+    text-align: right;
+}
+
 
 .info-buttons {
 display: flex;
@@ -133,8 +134,12 @@ gap: 12px;
     padding: 12px 24px;
     width: 100%;
 }
-.info-buttons__like {
+.info-buttons__to-cart:hover {
+    background-color: #fff;
+    color: #0044F0;
+}
 
+.info-buttons__like {
     align-self: center;
     flex-shrink: 0;
 }
