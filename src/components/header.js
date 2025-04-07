@@ -4,7 +4,7 @@ export const header = () => {
     const el = document.createElement('header');
     el.classList.add('header');
 
-    const child = 
+    const child = `
     <div class="header__wrapper">
     <a href="/" title="Переход на главную страницу" aria-label="Переход на главную страницу" class="header__logo-link">
         <img src="/img/logo.svg" alt="logo" class="header__logo-image">
@@ -40,9 +40,9 @@ export const header = () => {
         </a>
     </div>
     </div>
+    `;
 
     el.append(layout(child, 'header__container'));
-    console.log('el:', el);
 
     return el;
 }

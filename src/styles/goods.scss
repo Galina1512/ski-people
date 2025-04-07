@@ -1,7 +1,7 @@
 .goods {
-    padding: 40px 0;
+    padding: 40px 16;
     @media (min-width: 1024px) {
-        padding: 60px 0;
+        padding: 60px 16;
     }
 
 }
@@ -89,7 +89,6 @@
 }
 .card__like-button {
     position: absolute;
-    content: '';
     top: 12px;
     right: 12px;
     
