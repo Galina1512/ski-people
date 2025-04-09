@@ -16,6 +16,7 @@
     "vite": "^6.2.0"
   },
   "dependencies": {
+    "file-url": "^4.0.0",
     "navigo": "^8.11.1",
     "slider": "^1.0.4",
     "swiper": "^11.2.6"

@@ -1,33 +1,31 @@
 import Navigo from "navigo";
 import { header } from "../components/header";
+import { main } from "../components/main";
 import { footer } from "../components/footer";
-import { favorite } from "../components/favorite";
-import { order } from "../components/order";
-import { breadcrumb } from "../components/breadcrumb";
-import { product } from "../components/product";
+import { productList } from "../components/productList";
+import { getData } from "./api";
+import { catalog } from "../components/catalog";
 
 const router = new Navigo('/', { linksSelector: 'a[href^="/"]'});
 
-
 export const initRouter = () => {
     router
-    .on('/', () => {
-       document.body.append(
+    .on('/', async () => {
+        const goods = await getData()
         header(),
-        favorite(),
-        breadcrumb(),
-        product(),
-        order(),
-        footer()
-    );
+        catalog(main(), goods);
+        productList('Список товаров', goods, main()),
+        footer(),
+        console.log('main');
     })
-    .on ('/favorite', () => {
-        console.log ('Favorite');
+    .on('/product', () => {
+        // header(),
+        // footer(),
+        console.log('product');
     })
-
     .notFound(() => {
-        console.log ('Error 404');
-    })
+        document.body.innerHTML = `<h2>Error 404 - такой страницы не существует</h2>`
+    });
 
     router.resolve();
 }

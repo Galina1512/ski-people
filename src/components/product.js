@@ -1,28 +1,39 @@
 import { layout } from "./layout";
 
+let rendered = false;
+
 export const product = () => {
-    const el = document.createElement('product');
+  if (rendered) {
+    return '';
+  };
+
+    const el = document.createElement('section');
     el.classList.add('product');
     const child = `
     <div class="container product__container">
       <h2 class="product__title">Горные лыжи</h2>
     <div class="product__description">
 
-      <div class="swiper product__slider">
+    <div class="swiper product__slider">
+
     <div class="swiper-wrapper product__slider-image slider-image">
-      <div class="swiper-slide slider-image__slide">
-        <img class="slider-image__img" src="/img/photo.png" />
-      </div>
-      <div class="swiper-slide slider-image__slide">
-        <img class="slider-image__img" src="/img/photo.png" />
-      </div>
-      <div class="swiper-slide slider-image__slide">
-        <img class="slider-image__img" src="/img/photo.png" />
-      </div>
-      <div class="swiper-slide slider-image__slide">
-        <img class="slider-image__img" src="/img/photo.png" />
-      </div>
+        <div class="swiper-slide slider-image__slide">
+            <img class="slider-image__img" src="/img/photo.png" />
+        </div>
+
+        <div class="swiper-slide slider-image__slide">
+            <img class="slider-image__img" src="/img/photo.png" />
+        </div>
+
+        <div class="swiper-slide slider-image__slide">
+            <img class="slider-image__img" src="/img/photo.png" />
+        </div>
+
+        <div class="swiper-slide slider-image__slide">
+            <img class="slider-image__img" src="/img/photo.png" />
+        </div>
     </div>
+
     <button type="button" class="product__slider-arrow product__slider-arrow_prev">
       <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect width="32" height="32" rx="16" fill="white" fill-opacity="0.4"/>
@@ -39,19 +50,25 @@ export const product = () => {
   </div>
 
     <div thumbsSlider="" class="swiper product__slider-thumbnails slider-thumbnails">
-          <div class="swiper-slide slider-thumbnails__list">
-        <img class="slider-thumbnails__image" src="/img/1.png" />
-      </div>
+    <div class="swiper-wrapper">
 
-      <div class="swiper-slide slider-thumbnails__list">
+        <div class="swiper-slide slider-thumbnails__list">
+        <img class="slider-thumbnails__image" src="/img/1.png" />
+        </div>
+
+        <div class="swiper-slide slider-thumbnails__list">
         <img class="slider-thumbnails__image" src="/img/2.png" />
-      </div>
-      <div class="swiper-slide slider-thumbnails__list">
+        </div>
+
+        <div class="swiper-slide slider-thumbnails__list">
         <img class="slider-thumbnails__image" src="/img/3.png" />
-      </div>
-      <div class="swiper-slide sli">
+        </div>
+
+        <div class="swiper-slide sli">
         <img class="slider-thumbnails__image" src="/img/4.png" />
-      </div>
+        </div>
+
+    </div>
     </div>
   </div>
    
@@ -100,6 +117,8 @@ export const product = () => {
 </div>
     `;
     el.append(layout(child, 'product'));
+
+    rendered = true;
 
     return el;
 }

@@ -42,17 +42,18 @@
     display: flex;
     justify-content: start;
     color: #969EAE;
-    gap: 6px;
     font-size: 14px;
     margin-bottom: 24px;
 }
 .breadcrumb__item:not(:last-child) {
     margin-right: 6px;
-    .breadcrumb__item::after {
-        content: ">"; 
-        color: #969EAE;
-    }
 }
+.breadcrumb__item:not(:last-child)::after {
+    content: ">"; 
+    color: #969EAE;
+    margin-left: 6px;
+}
+
 
 .product__slider {
 position: relative;

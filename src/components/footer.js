@@ -1,6 +1,13 @@
+import { render } from "sass-embedded";
 import { layout } from "./layout";
 
+let rendered = false;
+
 export const footer = () => {
+    if (rendered) {
+        return '';
+    };
+    
     const el = document.createElement('footer');
     el.classList.add('footer');
 
@@ -71,6 +78,10 @@ export const footer = () => {
 </p>
 `;
     el.append(layout(child, 'footer__container'));
+
+    document.body.append(el);
+
+    rendered = true;
 
     return el;
 }
