@@ -1,0 +1,23 @@
+{
+  "name": "ski-people",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "start": "vite --open",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "normalize.css": "^8.0.1",
+    "sass": "^1.86.3",
+    "sass-embedded": "^1.86.1",
+    "vite": "^6.2.0"
+  },
+  "dependencies": {
+    "navigo": "^8.11.1",
+    "slider": "^1.0.4",
+    "swiper": "^11.2.6"
+  }
+}
