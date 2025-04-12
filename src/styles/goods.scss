@@ -3,7 +3,6 @@
     @media (min-width: 1024px) {
         padding: 60px 16;
     }
-
 }
 .goods__title {
     font-family: Inter;
@@ -20,20 +19,24 @@
 
 }
 .goods__list {
-   display: grid;
-   gap: 32px 8px;
-   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    display: grid;
+    gap: 32px 8px;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
 
-   @media (min-width: 768px) {
+    @media (min-width: 768px) {
     gap: 32px 10px;
     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-   }
+    }
 
-   @media (min-width: 1024px) {
+    @media (min-width: 1024px) {
     gap: 40px 16px;
     grid-template-columns: repeat(auto-fit, minmax(302px, 1fr));
-   }
+    }
+}
 
+.goods__item {
+   display: flex;
+    flex-direction: column;
 }
 .card {
     position: relative;
@@ -53,6 +56,7 @@
     width: 100%;
     object-fit: cover;
     border-radius: 16px;
+    margin-bottom: 12px;
 }
 
 .card__info {
@@ -63,7 +67,7 @@
     color: #1c1c1c;
 
     @media (min-width: 768px) {
-    flex-direction: row;
+    display: flex;
     justify-content: space-between;
     margin-bottom: 37px;
     }
@@ -77,31 +81,33 @@
     @media (min-width: 768px) {
         font-size: 16px;
     }
-
 }
 .card__info-price {
     font-size: 16px;
     @media (min-width: 768px) {
         font-size: 20px;
     }
-
-
 }
 .card__like-button {
-    position: absolute;
+    // position: absolute;
     top: 12px;
     right: 12px;
-    
-}
+ }
+ .card__like-svg {
+    color: #ffffff;
+ }
+ .card__like-svg_active {
+    color: #0044F0;
+ }
+ 
 .card__button {
     border: 1px solid #0044F0;
     border-radius: 32px;
     padding: 12px 24px;
     height: 38px;
     width: 100%;
-    color: #0044F0;
-    .card__button:hover {
-        color: #ffffff;
-        background-color: #0044F0;
-    }
+}
+.card__button:hover {
+color: #ffffff;
+background-color: #0044F0;
 }
