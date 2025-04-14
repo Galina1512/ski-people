@@ -5,6 +5,12 @@ import { localStorageLoad } from "../js/localstorage";
 let rendered = false;
 
 export const productList = (title, data, parent) => {
+    if (title === 'remove') {
+        document.querySelector('.goods').remove();
+        rendered = false;
+        return; 
+    }
+
     if (rendered) {
         return '';
     }
@@ -15,7 +21,7 @@ export const productList = (title, data, parent) => {
     const render = (data, result) => {
         data.forEach(({name, price, img, id}) => {
             result += `
-            <li class="goods__item>
+            <li class="goods__item">
                 <article class="goods__card card">
                     <a href="/product" class="card__link">
                         <img
@@ -69,8 +75,7 @@ export const productList = (title, data, parent) => {
                 e.target.classList.add('catalog__link_active'); 
         }
 
-        const refreshList = data.filter(item => item.type === e.target.textContent);
-        console.log(refreshList);
+        const refreshList = data.filter(item => item.type === e.target.textContent.trim());
 
         const list = document.querySelector('.goods__list');
         list.textContent = '';

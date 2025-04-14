@@ -35,6 +35,7 @@
 }
 
 .goods__item {
+    position: relative;
    display: flex;
     flex-direction: column;
 }
@@ -89,7 +90,7 @@
     }
 }
 .card__like-button {
-    // position: absolute;
+    position: absolute;
     top: 12px;
     right: 12px;
  }

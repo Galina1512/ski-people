@@ -8,14 +8,14 @@ export const header = () => {
     }
     const el = document.createElement('header');
     el.classList.add('header');
-
+    
     const child = `
     <div class="header__wrapper">
     <a href="/" title="Переход на главную страницу" aria-label="Переход на главную страницу" class="header__logo-link">
         <img src="/img/logo.svg" alt="logo" class="header__logo-image">
     </a>
     <form action="#" class="search">
-        <input type="search" name="search" class="header__search-input">
+        <input type="search" name="search" class="header__search-input"/>
         <button class="header__search-button" type="submit">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M7.66634 14C11.1641 14 13.9997 11.1645 13.9997 7.66671C13.9997 4.1689 11.1641 1.33337 7.66634 1.33337C4.16854 1.33337 1.33301 4.1689 1.33301 7.66671C1.33301 11.1645 4.16854 14 7.66634 14Z" stroke="#1C1C1C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -33,7 +33,7 @@ export const header = () => {
 
         <a href="/cart" class="header__link">
         <span class="header__link-text">Корзина</span>
-        <span class="header__link-count">(5)</span>
+        <span class="header__link-count">(8)</span>
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M5.87329 1.33337L3.45996 3.75337" stroke="#1C1C1C" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M10.127 1.33337L12.5403 3.75337" stroke="#1C1C1C" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
