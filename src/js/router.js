@@ -11,6 +11,7 @@ import { search } from "./search";
 import { paginationHtml } from "./paginationHtml";
 import { paginationCount } from "./paginationCount";
 import { paginationData } from "./paginationData";
+import { breadcrumb } from "../components/breadcrumb";
 
 export const router = new Navigo('/', { linksSelector: 'a[href^="/"]'});
 
@@ -20,7 +21,12 @@ export const initRouter = () => {
     const goods = await getData();
     header();
     search();
-    catalog('', main(), goods);
+    catalog('', main(), goods[0]);
+    breadcrumb('', main(), [
+        {'text': 'Главная', 'href': '/'},
+        {'text': 'Лыжи', 'href': '/ski'},
+        {'text': 'Горные лыжи', 'href': '/sky'},
+    ]);
     productList('Список товаров', goods[0], main());
     paginationHtml('', main(), goods);
     paginationCount(goods);
@@ -74,11 +80,17 @@ export const initRouter = () => {
 .on ('/favorite', async () => {
     const goods = await getData();
         header();
+        breadcrumb('', main(), [
+            {'text': 'Главная', 'href': '/'},
+            {'text': 'Избранное', 'href': '/favorite'},
+        ]);
+
         productList('Избранное', localStorageLoad('ski-people-favorite'), main());
+        addFavorite(goods);
+
         paginationHtml('', main());
         paginationCount();
         footer();
-        addFavorite(goods);
         search();
         console.log ('Favorite');
         router.updatePageLinks();

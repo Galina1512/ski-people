@@ -12,13 +12,14 @@ export const addFavorite = async (data) => {
                 if (favoriteList.length === 0) {
                     favoriteList.push(item);
                     localSrorageSave('ski-people-favorite', favoriteList);
+                    console.log("favoriteList:", favoriteList);
+
                 } else {
                     let thereIs = false;
                     favoriteList.forEach((favoriteItem, index) => {
                         if (favoriteItem.id === id) {
                             thereIs = true;
                             favoriteList.splice(index, 1);
-                            console.log("favoriteList:", favoriteList);
                             localSrorageSave('ski-people-favorite', favoriteList);
                         } 
                     if (!thereIs) {

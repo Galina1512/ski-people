@@ -1,6 +1,18 @@
 import { layout } from "./layout";
 
-export const favorite = () => {
+let rendered = false;
+
+export const favorite = (action, parent, data) => {
+    if (action === 'remove') {
+        document.querySelector('.favorite').remove();
+        rendered = false;
+        return;
+    }
+
+    if (rendered) {
+        return '';
+    }
+
     const el=document.createElement('goods');
     el.classList.add('goods');
     const child = `
@@ -29,6 +41,10 @@ export const favorite = () => {
     `;
 
     el.append(layout(child, 'goods'));
+    parent.append
+    (el);
+
+    rendered = true;
 
     return el;
 }

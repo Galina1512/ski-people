@@ -14,7 +14,7 @@ export const header = () => {
     <a href="/" title="Переход на главную страницу" aria-label="Переход на главную страницу" class="header__logo-link">
         <img src="/img/logo.svg" alt="logo" class="header__logo-image">
     </a>
-    <form action="#" class="search">
+    <form action="#" class="search header__search">
         <input type="search" name="search" class="header__search-input"/>
         <button class="header__search-button" type="submit">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">

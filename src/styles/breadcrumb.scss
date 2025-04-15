@@ -1,0 +1,14 @@
+.breadcrumb {
+        .breadcrumb__list {
+            display: flex;
+            gap: 6px;
+            color: #969EAE;
+    }
+    .breadcrumb__item {
+        &:not(:last-child)::after{
+            content: ">";
+            padding-left: 6px;
+        }
+    }
+}
+
